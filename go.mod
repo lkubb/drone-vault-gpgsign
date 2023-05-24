@@ -1,4 +1,4 @@
-module github.com/lkubb/drone-plugin-vault-gpg-sign
+module github.com/lkubb/drone-vault-gpgsign
 
 go 1.20
 

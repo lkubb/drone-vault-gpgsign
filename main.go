@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/lkubb/drone-plugin-vault-gpg-sign/plugin"
+	"github.com/lkubb/drone-vault-gpgsign/plugin"
 
 	"github.com/urfave/cli/v2"
 )
