@@ -16,37 +16,37 @@ func main() {
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:    "key",
-				Usage:   "Use this named key from Vault to sign the data. Defaults to `drone`.",
+				Usage:   "Named Vault GPG key to sign the artifacts with.",
 				Value:   "drone",
 				EnvVars: []string{"PLUGIN_KEY"},
 			},
 			&cli.BoolFlag{
 				Name:    "armor",
-				Usage:   "Write ASCII-armored detached signatures (.asc) instead of binary ones (.sig). Defaults to false.",
+				Usage:   "Write ASCII-armored detached signatures (.asc) instead of binary ones (.sig).",
 				Value:   false,
 				EnvVars: []string{"PLUGIN_ARMOR"},
 			},
 			&cli.StringFlag{
 				Name:    "mount",
-				Usage:   "Mount the GPG secret backend is mounted at. Defaults to `gpg`.",
+				Usage:   "Mount the GPG secret backend is mounted at.",
 				Value:   "gpg",
 				EnvVars: []string{"PLUGIN_MOUNT"},
 			},
 			&cli.StringFlag{
 				Name:    "algo",
-				Usage:   "Specifies the hash algorithm to use. Defaults to `sha2-256`.",
+				Usage:   "Specifies the hash algorithm to use.",
 				Value:   "sha2-256",
 				EnvVars: []string{"PLUGIN_ALGO"},
 			},
 			&cli.StringFlag{
 				Name:    "auth",
-				Usage:   "Specifies the auth method to use with Vault. Defaults to `token`. Valid: `token`, `approle`.",
+				Usage:   "Specifies the auth method to use with Vault. Valid: `token`, `approle`.",
 				Value:   "token",
 				EnvVars: []string{"PLUGIN_AUTH"},
 			},
 			&cli.StringFlag{
 				Name:    "authmount",
-				Usage:   "Specifies the mount the AppRole auth backend is mounted at. Defaults to `approle`.",
+				Usage:   "Specifies the mount the AppRole auth backend is mounted at.",
 				Value:   "approle",
 				EnvVars: []string{"PLUGIN_AUTHMOUNT"},
 			},
@@ -62,7 +62,7 @@ func main() {
 			},
 			&cli.BoolFlag{
 				Name:    "wrapped-secret",
-				Usage:   "Indicates that the authentication secret is passed as a wrapping token. Defaults to false.",
+				Usage:   "Indicates that the authentication secret is passed as a wrapping token.",
 				Value:   false,
 				EnvVars: []string{"PLUGIN_WRAPPED_SECRET"},
 			},

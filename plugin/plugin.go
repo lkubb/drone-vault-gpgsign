@@ -80,7 +80,7 @@ func (p *Plugin) Exec() error {
 		return nil
 	}
 	for _, file := range files {
-		log.Println("Signing file %s", file)
+		log.Println("Signing file", file)
 		err = p.sign(file)
 		if err != nil {
 			return err
@@ -195,7 +195,7 @@ func (p *Plugin) approleLogin() error {
 		return fmt.Errorf("Failed login with AppRole auth method: %w", err)
 	}
 	if authInfo == nil {
-		return fmt.Errorf("no auth info was returned after login")
+		return fmt.Errorf("No auth info was returned after login")
 	}
 	if p.client.Token() != "" {
 		return nil
