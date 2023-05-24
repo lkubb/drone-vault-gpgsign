@@ -1,0 +1,10 @@
+FROM golang:1.20 AS builder
+
+RUN update-ca-certificates
+
+FROM scratch as runner
+
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY drone-vault-sign /bin/drone-vault-sign
+
+ENTRYPOINT ["/bin/drone-vault-sign"]
