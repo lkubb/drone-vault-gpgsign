@@ -175,7 +175,9 @@ func (p *Plugin) approleLogin() error {
 	options := []auth.LoginOption{auth.WithMountPath(p.Config.AuthMount)}
 	var secretID *auth.SecretID
 	if p.Config.SecretID != "" {
-		secretID.FromString = p.Config.SecretID
+		secretID = &auth.SecretID{
+			FromString: p.Config.SecretID,
+		}
 		if p.Config.SecretWrapped {
 			options = append(options, auth.WithWrappingToken())
 		}
